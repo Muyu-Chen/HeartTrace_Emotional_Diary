@@ -1,0 +1,640 @@
+/* 重置默认的 padding 和 margin */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 设置 html 和 body 的基本样式 */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #2a539d;
+    color: white;
+}
+
+/* 容器样式 */
+.container {
+    position: absolute;
+    width: 100%;
+    height: 500%;
+    top: 0;
+    transition: all 0.5s ease;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    justify-content: flex-start;
+    /* 确保内容在容器的左侧对齐 */
+}
+
+.date-container h2 {
+    margin-right: 10px;
+    /* 控制日期和文字之间的间距 */
+}
+
+.date-container h1 {
+    font-size: 2em;
+    /* 调整字体大小以适应你的需求 */
+}
+
+
+/* 各 section 的基本样式 */
+.section {
+    width: 100%;
+    height: 100vh;
+    /* 确保每一屏的高度占满视窗 */
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+
+
+.section1 {
+    background-color: #2a539d;
+}
+
+.section1 .date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.section2 {
+    background-color: #2a539d;
+}
+
+.section3 {
+    background-color: #2a539d;
+}
+
+.section4 {
+    background-color: #2a539d;
+    position: relative;
+    /* 设置为相对定位，以便 img 绝对定位相对于这个 div */
+    background: url(./map_backgroud.jpg);
+}
+
+.section5 {
+    background-color: #2a539d;
+}
+
+/* 第一屏的独特样式 */
+
+
+.date-container h2 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.date-container h1 {
+    margin: 0;
+    font-size: 150px;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 通用居中样式 */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* 导航栏样式 */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #2a539d;
+    /* 可选：设置背景色以确保导航栏的可见性 */
+
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 可选：添加阴影效果 */
+    z-index: 1000;
+    /* 确保导航栏在其他内容之上 */
+}
+
+
+/* 导航栏的列表样式 */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* 将内容居中 */
+    width: 100%;
+    /* 确保导航栏占据整个宽度 */
+    height: 50px;
+    /* 控制导航栏的高度 */
+}
+
+/* 导航项样式 */
+nav ul li {
+    display: inline;
+    font-size: 18px;
+    /* 统一字体大小 */
+    margin: 0 10px;
+    /* 增加导航项之间的间距 */
+    padding: 10px;
+    /* 增加内边距以提升点击区域 */
+    transition: background-color 0.3s, color 0.3s;
+    /* 添加过渡效果 */
+    font-family: '华文中宋', serif;
+}
+
+/* 鼠标悬停效果 */
+nav ul li:hover {
+    background-color: #f0f0f0;
+    /* 鼠标悬停时背景色变化 */
+    color: #007bff;
+    /* 鼠标悬停时字体颜色变化 */
+    cursor: pointer;
+    /* 鼠标悬停时显示手型光标 */
+}
+
+.container-in-one-line {
+    display: flex;
+    /* 启用 Flexbox 布局 */
+    align-items: center;
+    /* 垂直居中对齐子项 */
+    gap: 20px;
+    /* 控制子项之间的间距 */
+}
+
+.div-in-one-line {
+    display: flex;
+    /* 启用 Flexbox 布局 */
+    align-items: flex-end;
+    /* 垂直底部对齐子项 */
+    gap: 0px;
+    /* 控制子项之间的间距 */
+}
+
+
+.leftBegin {
+    justify-content: flex-start;
+    /* 通过 flexbox 的 justify-content 控制左对齐 */
+    width: 90%;
+    /* 宽度设置为 100% 确保容器扩展到页面宽度，以体现对齐效果 */
+    text-align: left;
+}
+
+.half-line-break::before {
+    content: "";
+    display: block;
+    height: 1em;
+    /* 设置为半行高度 */
+}
+
+/* 日期样式 */
+.date-container h2 {
+    margin: 0;
+    font-family: '华文中宋', serif;
+    color: #c7c3ff;
+    font-size: 30px;
+}
+
+
+.date-container h1 {
+    margin: 0;
+    /* 去除外边距 */
+    font-family: 'Trajan', serif;
+    /* 使用 Trajan 字体或备用字体 */
+    font-size: 150px;
+    /* 调整字体大小 */
+    text-align: left;
+    /* 可以根据需要调整对齐方式，例如：center、right */
+}
+
+/* 引用文本样式 */
+blockquote {
+    font-size: 26px;
+    margin: 20px 0;
+    max-width: 600px;
+    font-family: '华文中宋', serif;
+}
+
+/* 底部内容样式 */
+footer p {
+    margin: 0;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* 向下箭头的样式 */
+.down-arrows {
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.down-arrows span {
+    display: block;
+    animation: bounce 1s infinite alternate;
+}
+
+
+@keyframes bounce {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+/* 控制按钮样式 */
+.controls {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 20;
+    /* 确保它在 overlay-map 之上 */
+    list-style: none;
+}
+
+.controls li {
+    width: 50px;
+    height: 50px;
+    font: bold 22px/50px '微软雅黑';
+    text-align: center;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.controls li+li {
+    margin-top: 5px;
+}
+
+.controls li.active {
+    background-color: #fff;
+    color: red;
+}
+
+.page2Context {
+    font-size: 1.8rem;
+    font-family: 华文中宋;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.headerlink {
+    /*去除链接的下划线*/
+    text-decoration: none;
+    /*设置链接的颜色*/
+    color: inherit;
+}
+
+/* 悬停时保持样式 */
+.headerlink:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 链接默认状态（未点击） */
+.headerlink:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 链接访问后状态 */
+.headerlink:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 点击后的激活状态 */
+.headerlink:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.slider-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    /* 居中对齐 */
+}
+
+.slider-images {
+    display: flex;
+    transition: opacity 0.6s ease;
+    opacity: 1;
+}
+
+.slider-images.fade-out {
+    opacity: 0;
+}
+
+.slider-images.fade-in {
+    opacity: 1;
+}
+
+
+.slider-images img {
+    width: 300px;
+    height: 300px;
+}
+
+.half-line-break::before {
+    content: "";
+    display: block;
+    height: 0.5em;
+    /* 设置为半行高度 */
+}
+
+.oneFourth-line-break::before {
+    content: "";
+    display: block;
+    height: 0.25em;
+    /* 设置为半行高度 */
+}
+
+.slider-control {
+    width: 250px;
+    margin: 20px auto;
+    /* 居中对齐 */
+}
+
+
+.input-box {
+    margin-top: 0px;
+    background-color: #7CA1CC;
+    padding: 0px;
+    border-radius: 1px;
+    display: inline-block;
+    border-radius: 15px;
+    margin-top: 20px;
+    /* 调整为更大的值以使四角变圆 */
+}
+
+.input-box p {
+    color: #246699;
+}
+
+.input-box textarea {
+    width: 30rem;
+    height: 14rem;
+    background-color: #75b3fb;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    border-radius: 20px;
+    /* 调整为更大的值以使四角变圆 */
+    font-family: '华文中宋', serif;
+    outline: none;
+    /* 取消输入框在被选中时的边框样式 */
+}
+
+textarea::placeholder {
+    color: #0866ae;
+    font-family: '华文中宋', serif;
+    /* 你可以根据需要更改颜色 */
+}
+
+.checkbox {
+    margin-top: 20px;
+}
+
+.checkbox label {
+    font-size: 14px;
+    color: #D8E3F1;
+}
+
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    white-space: nowrap;
+    /* 防止文本换行 */
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.uniform-button {
+    flex: 1 1 calc(25% - 10px);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: '华文中宋', serif;
+    color: rgb(83, 143, 255);
+    background-color: #bfdeff;
+    white-space: nowrap;
+    /* 防止文本换行 */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border-radius: 30px;
+    /* 确保按钮的圆角 */
+}
+
+.uniform-button:hover {
+    background-color: #0056b3;
+}
+
+/* 按下时的激活状态 
+.uniform-button.active {
+    background-color: #0056b3;
+    color: white;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    /* 描边效果 
+}
+*/
+
+.uniform-button.active {
+    background-color: #0056b3;
+    color: white;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7);
+    /* 内描边效果 */
+}
+
+.uniform-button:focus {
+    outline: none;
+}
+
+
+.overlay-map {
+    position: absolute;
+    /* 固定在视口中 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05) url(./map_mood_backgroud.png) no-repeat center center;
+    /* 不重复并居中 第三个是透明度*/
+    background-size: cover;
+    /* 填充整个区域 */
+    display: none;
+    /* 初始状态隐藏 */
+    z-index: 10;
+    /* 确保在背景图上 */
+}
+
+.toggle-button-map {
+    width: 60px;
+    /* 设置宽度 */
+    height: 60px;
+    /* 设置高度 */
+    position: absolute;
+    /* 绝对定位 */
+    bottom: 30px;
+    /* 距离底部 10 像素 */
+    right: 60px;
+    /* 距离右边 10 像素 */
+    z-index: 20;
+    /* 确保它在 overlay-map 之上 */
+    height: auto;
+    /* 高度自动 */
+    cursor: pointer;
+    /* 鼠标悬停时显示为手型 */
+}
+
+.custom-box {
+    position: absolute;
+    font-family: '华文中宋';
+    font-size: 15px;
+    width: 150px;
+    /* 盒子宽度 */
+    height: 20px;
+    /* 盒子高度 */
+    background-color: #2a539d;
+    /* 盒子背景颜色 */
+    border: 2px solid white;
+    /* 可选：白色边框 */
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 10px;
+    /* 确保按钮的圆角 */
+    z-index: 20;
+    /* 确保它在 overlay-map 之上 */
+}
+
+#customBox1 {
+    font-size: 15px;
+    top: 52%;
+    /* 距离顶部的距离 */
+    left: 15%;
+    /* 距离左侧的距离 */
+    width: 180px;
+    /* 可以单独调整每个框的宽度 */
+    height: 20px;
+    /* 可以单独调整每个框的高度 */
+    background-color: #2a539d;
+    /* 单独调整颜色 */
+
+}
+
+#customBox2 {
+    width: 130px;
+    top: 34%;
+    left: 32%;
+}
+
+#customBox3 {
+    width: 180px;
+    top: 28%;
+    left: 53%;
+}
+
+#customBox4 {
+    width: 180px;
+    top: 78%;
+    left: 31%;
+}
+
+#customBox5 {
+    width: 170px;
+    top: 60%;
+    left: 62%;
+}
+
+#customBox6 {
+    width: 140px;
+    top: 45%;
+    left: 55%;
+}
+
+#customBox7 {
+    width: 140px;
+
+    height: 40px;
+    /* 高度自动适应内容 */
+    top: 54%;
+    left: 46%;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    /* 去掉下划线 */
+    display: -webkit-box;
+    /* 使用 Flexbox */
+    -webkit-box-orient: vertical;
+    /* 垂直方向排列 */
+    -webkit-line-clamp: 2;
+    /* 限制为两行 */
+    background-color: #2a539d;
+    transition: background-color 0.3s;
+    /* 背景色渐变效果 */
+}
+
+#customBox7:hover {
+    background-color: #45a049;
+    /* 鼠标悬停时的背景色 */
+}

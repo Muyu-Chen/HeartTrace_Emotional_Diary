@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <title>心迹·情感日记</title>
+</head>
+
+
+<body>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./fonts.css">
+
+
+
+    </div>
+    <div class="container">
+        <!-- 第1屏 -->
+        <div class="section section1">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="" class="headerlink">禁止CUPL相关人员使用 </a></li>
+                        <li><a href="./timeClock/" class="headerlink">⏰ 时钟 </a></li>
+                        <li><a href="./TomatoClock/" class="headerlink">⏳ 番茄钟</a></li>
+                        <li><a href="./whiteNoise/" class="headerlink">🏞 白噪音</a></li>
+                        <li><a href="./account/" class="headerlink">👤 我的</a></li>
+                        <li>⚙️ 设置</li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container-in-one-line">
+
+                <div class="date-container">
+                    <h2 id="current-date"></h2>
+                    <h1 id="current-day"></h1>
+                </div>
+                <blockquote>
+                    <span id="quoteContents">你生命的前半辈子或许属于别人，活在别人的认知里。那把后半辈子还给你自己，去追随你内在的声音。</span>
+                    <br><span style="text-align: right; display: block; margin-top: 10px; margin-right: 10px;"
+                        id="quoteWritorName">——卡尔·荣格</span>
+                </blockquote>
+
+            </div>
+
+            <footer>
+                <p class="half-line-break"></p>
+                <p>你的心情如何？往下滑动，记录下来...</p>
+                <div class="down-arrows" id="down-arrow-1" style="padding: 10px;">
+                    <span>⬇️⬇️⬇️</span>
+                </div>
+
+            </footer>
+            <!--<p class="half-line-break">网站未适配safari，适配chromium内核的浏览器</p>-->
+        </div>
+
+        <div class="section section2">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="" class="headerlink">禁止CUPL相关人员使用 </a></li>
+                        <li><a href="./timeClock/" class="headerlink">⏰ 时钟 </a></li>
+                        <li><a href="./TomatoClock/" class="headerlink">⏳ 番茄钟</a></li>
+                        <li><a href="./whiteNoise/" class="headerlink">🏞 白噪音</a></li>
+                        <li><a href="./account/" class="headerlink">👤 我的</a></li>
+                        <li>⚙️ 设置</li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="leftBegin page2Context">
+                <!-- 之前的版本 错了的
+                
+                <div class="div-in-one-line ">
+                    <p>
+                        今天是
+                    <p id="current-day-2"
+                        style="font-size: 6rem; transform: translateY(0.185em); font-family: 'Trajan';">
+                    </p>号,&nbsp;
+                    <p id="current-year"></p>
+                    年已过<p id="current-day-of-percents"></p>%，&nbsp;
+                    <p id="current-month"></p>
+                    月已过<p id="current-day-of-percents-month"></p>%。
+                    </p>
+                </div>
+                -->
+                <div class="div-in-one-line">
+                    <p>
+                        今天是
+                        <span id="current-day-2"
+                            style="font-size: 6rem; transform: translateY(0.185em); font-family: 'Trajan';"></span>号,&nbsp;
+                        <span id="current-year"></span>年已过<span id="current-day-of-percents"></span>%，&nbsp;
+                        <span id="current-month"></span>月已过<span id="current-day-of-percents-month"></span>%。
+                    </p>
+                </div>
+
+                <p class="oneFourth-line-break">今天过得好吗？心情如何呢？</p>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-images" style="transform: translateX(-900px)" id="image-slider-photos">
+                    <img src="image1.png" alt="Image 1">
+                    <img src="image1.png" alt="Image 1">
+                    <img src="image1.png" alt="Image 1">
+                    <img src="image2.png" alt="Image 2">
+                    <img src="image2.png" alt="Image 2">
+                    <img src="image2.png" alt="Image 2">
+                </div>
+            </div>
+            <input type="range" min="0" max="5" value="3" class="slider-control" id="image-slider">
+            <p id="emotion-display" class="page2Context">还不错(￣▽￣)~*</p>
+            <footer>
+                <p>你的心情如何？滑动进度条，保存此刻的心情...<br>往下滑动，进入下一章...</p>
+                <div class="down-arrows" id="down-arrow-2" style="padding: 5px;">
+                    <span>⬇️⬇️⬇️</span>
+                </div>
+            </footer>
+        </div>
+
+
+
+        <div class="section section3">
+            <p class="half-line-break"></p>
+            <div class="leftBegin page2Context">
+
+                <p>详细描述一下现在的心情吧，当我们勇敢地探寻我们内心时，我们将会得到进一步的平静，找到属于自己的光芒。</p>
+
+            </div>
+
+            <div class="buttons">
+                <button class="uniform-button" id="emotion-button-1" onclick="toggleActive(this)">焦虑</button>
+                <button class="uniform-button" id="emotion-button-2" onclick="toggleActive(this)">压抑</button>
+                <button class="uniform-button" id="emotion-button-3" onclick="toggleActive(this)">愤怒</button>
+            </div>
+
+            <div class="buttons">
+                <button class="uniform-button" id="emotion-button-4" onclick="toggleActive(this)">痛苦</button>
+                <button class="uniform-button" id="emotion-button-5" onclick="toggleActive(this)">悲伤</button>
+                <button class="uniform-button" id="emotion-button-6" onclick="toggleActive(this)">其他</button>
+            </div>
+
+
+            <div class="input-box">
+                <textarea placeholder="今天过得好吗？今天心情怎么样呢？好好吃饭了吗？好好睡觉了吗？做了哪些事呢？还有在胡思乱想吗？"></textarea>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" checked> 匿名分享至“心灵树洞”</label>
+            </div>
+            <footer style="padding: 5px;">
+
+                <p>
+                    <a href="./moodchat" class="headerlink">你的心情如何？保存此刻，探寻灵魂深处的心情...<br>
+                        往下滑动，进入下一章...<br>
+                        心情不好的话点我，可以和她来聊聊~</a>
+                </p>
+
+                <div class="down-arrows" id="down-arrow-3" style="padding: 10px;">
+                    <span>⬇️⬇️⬇️</span>
+                </div>
+            </footer>
+        </div>
+
+
+
+        <div class="section section4">
+            <div class="overlay-map" id="overlay-map"></div>
+            <img src="./notBeenActived.png" alt="Toggle Overlay" class="toggle-button-map" id="toggleButton-map">
+            <div class="background-box">
+                <div class="custom-box" id="customBox1">寻物启事：今天我的英语教</div>
+                <div class="custom-box" id="customBox2">今天人好多！！!</div>
+                <div class="custom-box" id="customBox3">好社恐，是有什么活动</div>
+                <div class="custom-box" id="customBox4">墙裂安利今天的西瓜，超好吃</div>
+                <div class="custom-box" id="customBox5">失眠了 凌晨5点还睡不着啊啊啊啊</div>
+                <div class="custom-box" id="customBox6">今天盐超级多，慎吃</div>
+                <a href="./mapCommentPage/" class="custom-box" id="customBox7">点击这里，记录下今天的经历吧！</a>
+
+            </div>
+        </div>
+
+
+        <div class="section section5">
+            <audio id="background-music" src="./whiteNoise/music.mp3" loop></audio>
+            <header>
+
+            </header>
+            <div>
+                <blockquote style="padding-top: 100px;">
+                    <span>闭上眼睛，仔细想想，今天经历了什么？从中识别出自己的感受。一旦我们知道了自己的感受，我们就能够掌控它，并决定下一步做什么。</span>
+                    <br><br><span style="display: block;">听着雨声，闭上眼睛，进入内心的世界吧。</span>
+                </blockquote>
+                <div style="text-align: center;">
+                    <img src="./whiteNoise/treelogo.png" alt="treelogo" width="250px" height="250px"
+                        style="padding-top: 20px;">
+                    <br>
+                    <button id="toggle-button" style="background: none; border: none; padding-top: 10px;">
+                        <img id="toggle-icon" src="./whiteNoise/play.png" alt="toggle" width="40px" height="40px">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="section section6">
+            <h1>第6屏</h1>
+        </div>
+    </div>
+
+    <ul class="controls">
+        <li class="active">1</li>
+        <li id="button2">2</li>
+        <li id="button3">3</li>
+        <li id="button4">4</li>
+        <li id="button5">5</li>
+    </ul>
+
+</body>
+<script type="text/javascript" src="./script3.js"></script>
+<script type="text/javascript" src="./quoteContents.js"></script>
+
+<script type="text/javascript" src="./script4.js"></script>
+<script type="text/javascript" src="./scriptSliderContainer.js"></script>
+<script type="text/javascript" src="./mapMoodColor.js"></script>
+
+</html>
