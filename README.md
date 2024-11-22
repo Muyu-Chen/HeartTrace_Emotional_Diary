@@ -1,5 +1,6 @@
 # HeartTrace-Emotional-Diary
-心迹·情感日记是一款在线心情记录与分析平台，旨在帮助用户更好地理解自己的情绪变化，促进心理健康。平台提供多种心情记录方式，如文字、图片、语音等，并能根据用户的心情记录进行情感分析，生成个性化的报告。此外，本项目还支持商业化推广，为用户提供更多有价值的服务。心迹·情感日记不仅是一个个人情感管理工具，也是一个开放的社区，鼓励用户分享自己的心情故事，相互支持和鼓励。
+心迹·情感日记是一款在线心情记录与分析平台，旨在帮助用户更好地理解自己的情绪变化，促进心理健康。平台提供多种心情记录方式，如文字、图片、语音等，并能根据用户的心情记录进行情感分析，生成个性化的报告。此外，本项目还支持商业化推广，为用户提供更多有价值的服务。心迹·情感日记不仅是一个个人情感管理工具，也是一个开放的社区，鼓励用户分享自己的心情故事，相互支持和鼓励。  
+HeartTrace: Emotional Diary is an online platform for mood tracking and analysis, designed to help users better understand their emotional fluctuations and promote mental health. The platform offers various ways to record moods, such as text, images, and voice, and can perform sentiment analysis based on the user's mood records, generating personalized reports. Furthermore, this project supports commercial promotion, providing users with more valuable services. HeartTrace: Emotional Diary is not only a personal emotional management tool but also an open community that encourages users to share their mood stories, supporting and encouraging each other.  
 
 # License  
 此软件根据GNU通用公共许可证第3版（GPLv3）发布，但附加以下限制条款。如果本自定义许可证与GPLv3有任何冲突，以本自定义许可证（许可证`license`中详细说明）为准。  
