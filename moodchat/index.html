@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with Mood-Chat AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div style="text-align: center;">
+      <h2>Mood Chat</h2>
+    </div>
+    <h1 id="chat-title">有什么可以帮忙的？</h1>
+    <div id="chat-box"></div>
+    <div class="chat-ipt">
+      <input id="message-input" placeholder="给 Mood-Chat 发送信息"></input>
+      <button id="send-button">&uarr;</button>
+      <div class="btn-group">
+        <button
+          onclick="sendCustomMessage('Explain a single, lesser-known psychological concept in a professional yet simple way, without using Psychological Resilience, and keep it under 150 words. At the end, ask if the user would like further explanation or examples. 中文回复 少于150字', true)">心理知识</button>
+        <button onclick="sendCustomMessage('介绍一些如何管理情绪的方法，不要与前文重复，不要超过150字', true)">管理情绪</button>
+        <button onclick="sendCustomMessage('说几种减压方法，不要与前文重复，不要超过150字', true)">减压方法</button>
+        <button onclick="sendCustomMessage('心理健康是什么，如和管理和认识呢？不要与前文重复，不要超过150字', true)">心理健康</button>
+      </div>
+    </div>
+  </div>
+
+
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
