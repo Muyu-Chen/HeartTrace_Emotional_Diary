@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏞 白噪音</title>
+
+</head>
+
+<style>
+    body {
+        background-color: #2a539d;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="./styles.css">
+<link rel="stylesheet" type="text/css" href="./fonts.css">
+
+<body>
+    <audio id="background-music" src="./music.mp3" autoplay loop></audio>
+
+
+
+    <header>
+        <nav>
+                    <ul>
+                        <li><a href="http://47.109.109.48/gxt/demo/timeClock/" class="headerlink">⏰ 时钟 </a></li>
+                        <li><a href="http://47.109.109.48/gxt/demo/TomatoClock/" class="headerlink">⏳ 番茄钟</a></li>
+                        <li><a href="http://47.109.109.48/gxt/demo/whiteNoise/" class="headerlink">🏞 白噪音</a></li>
+                        <li><a href="http://47.109.109.48/gxt/demo/account/" class="headerlink">👤 我的</a></li>
+                        <li>⚙️ 设置</li>
+                    </ul>
+
+        </nav>
+    </header>
+    <div>
+        <blockquote style="padding-top: 100px;">
+            <span>闭上眼睛，仔细想想，今天经历了什么？从中识别出自己的感受。一旦我们知道了自己的感受，我们就能够掌控它，并决定下一步做什么。</span>
+            <br><br><span style="display: block;">听着雨声，闭上眼睛，进入内心的世界吧。</span>
+        </blockquote>
+        <div style="text-align: center;">
+            <img src="./treelogo.png" alt="treelogo" width="250px" height="250px" style="padding-top: 20px;">
+            <br>
+            <button id="toggle-button" style="background: none; border: none; padding-top: 10px;">
+                <img id="toggle-icon" src="./play.png" alt="toggle" width="40px" height="40px">
+            </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('toggle-button').addEventListener('click', function () {
+            var audio = document.getElementById('background-music');
+            var icon = document.getElementById('toggle-icon');
+
+            if (audio.paused) {
+                audio.play().catch(function (error) {
+                    console.log('Autoplay was prevented:', error);
+                });
+                icon.src = './stop.png'; // Change icon to stop
+            } else {
+                audio.pause();
+                icon.src = './play.png'; // Change icon to play
+            }
+        });
+    </script>
+</body>
+
+
+</html>
