@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>地图</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 50px);
+            /* 减去导航栏的高度 */
+            margin-top: 50px;
+            /* 确保内容从导航栏下方开始 */
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #2a539d;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .messages::-webkit-scrollbar {
+            width: 10px;
+            /* 滚动条宽度 */
+        }
+
+        .messages::-webkit-scrollbar-track {
+            background: #333;
+            /* 轨道背景颜色 */
+        }
+
+        .messages::-webkit-scrollbar-thumb {
+            background: #555;
+            /* 滚动条拇指颜色 */
+            border-radius: 5px;
+            /* 滚动条拇指圆角 */
+        }
+
+        .messages {
+            overflow-y: auto;
+            height: calc(100% - 100px);
+            /* 留出空间给输入框和按钮 */
+        }
+
+        .message {
+            background-color: #7a8ae2;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background-color: #647bfc;
+            /* 绿色背景表示用户发送的消息 */
+        }
+
+        .message .username {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-area button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .input-area button:hover {
+            background-color: #777;
+        }
+
+        .content {
+            width: 75%;
+            padding: 20px;
+            position: relative;
+            /* 使内容区域成为相对定位，方便绝对定位图片 */
+        }
+
+        .map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 使图片覆盖整个区域，保持比例 */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #2a539d;
+            /* 可选：设置背景色以确保导航栏的可见性 */
+
+            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 可选：添加阴影效果 */
+            z-index: 1000;
+            /* 确保导航栏在其他内容之上 */
+        }
+
+
+        /* 导航栏的列表样式 */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            /* 将内容居中 */
+            width: 100%;
+            /* 确保导航栏占据整个宽度 */
+            height: 50px;
+            /* 控制导航栏的高度 */
+        }
+
+        /* 导航项样式 */
+        nav ul li {
+            display: inline;
+            font-size: 18px;
+            /* 统一字体大小 */
+            margin: 0 10px;
+            /* 增加导航项之间的间距 */
+            padding: 10px;
+            /* 增加内边距以提升点击区域 */
+            transition: background-color 0.3s, color 0.3s;
+            /* 添加过渡效果 */
+            font-family: '华文中宋', serif;
+            color: white;
+        }
+
+        /* 鼠标悬停效果 */
+        nav ul li:hover {
+            background-color: #f0f0f0;
+            /* 鼠标悬停时背景色变化 */
+            color: #007bff;
+            /* 鼠标悬停时字体颜色变化 */
+            cursor: pointer;
+            /* 鼠标悬停时显示手型光标 */
+        }
+
+        .headerlink {
+            /*去除链接的下划线*/
+            text-decoration: none;
+            /*设置链接的颜色*/
+            color: inherit;
+        }
+
+        /* 悬停时保持样式 */
+        .headerlink:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 链接默认状态（未点击） */
+        .headerlink:link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 链接访问后状态 */
+        .headerlink:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 点击后的激活状态 */
+        .headerlink:active {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://47.109.109.48/gxt/demo/timeClock/" class="headerlink">⏰ 时钟 </a></li>
+                <li><a href="http://47.109.109.48/gxt/demo/TomatoClock/" class="headerlink">⏳ 番茄钟</a></li>
+                <li><a href="http://47.109.109.48/gxt/demo/whiteNoise/" class="headerlink">🏞 白噪音</a></li>
+                <li><a href="http://47.109.109.48/gxt/demo/account/" class="headerlink">👤 我的</a></li>
+                <li>⚙️ 设置</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div
+                style="display: flex; justify-content: center;  color: white; font-size: 24px; font-family: '华文中宋', serif;">
+                梅园1号楼
+            </div>  
+            <div class="messages">
+                <div class="message">
+                    <div class="username">Hua CH</div>
+                    <p>寻物启事：今天我的英语教材忘端升在302了，回去找的时候也没找到。封面写了名学和联系方式，如果有人看见了麻烦按照联系方式联系一下可以吗，十分感谢！</p>
+                </div>
+                <div class="message">
+                    <div class="username">好名字被占完了</div>
+                    <p>最近厌倦了食堂的味道，想尝试一些新的餐厅，有没有人推荐一下？最好是口味地道、价格实惠的~</p>
+                </div>
+                <div class="message">
+                    <div class="username">飞跃快乐</div>
+                    <p>今天在教学楼里迷路了好几次，感觉特别尴尬，有没有人能告诉我如何快速熟悉校园的布局？或者给一张方便记忆的地图呀~谢谢大家！</p>
+                </div>
+                <div class="message">
+                    <div class="username">鱼鱼</div>
+                    <p>谁能告诉我怎样才能申请到学校的奖学金？GPA这些要求有什么呀？听说还要面试？</p>
+                </div>
+                <!-- 可以在这里添加更多消息 -->
+            </div>
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="输入消息...">
+                <button id="sendButton">发送</button>
+            </div>
+        </div>
+        <div class="content">
+            <img src="./1729014754159.jpg" alt="图片" class="map-image">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const messagesDiv = document.querySelector('.messages');
+
+            // 页面加载时自动滚动到底部
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            document.getElementById('sendButton').addEventListener('click', function () {
+                const messageInput = document.getElementById('messageInput');
+                const messageText = messageInput.value.trim();
+                if (messageText) {
+                    const messagesDiv = document.querySelector('.messages');
+                    const newMessage = document.createElement('div');
+                    newMessage.classList.add('message', 'user'); // 添加 'message' 和 'user' 类
+                    newMessage.innerHTML = `
+                <div class="username">我</div>
+                <p>${messageText}</p>
+            `;
+                    messagesDiv.appendChild(newMessage);
+                    messageInput.value = ''; // 清空输入框
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight; // 滚动到底部
+                } else {
+                    alert('请输入消息内容。');
+                }
+            });
+
+            document.getElementById('messageInput').addEventListener('keypress', function (event) {
+                if (event.key === 'Enter') {
+                    document.getElementById('sendButton').click();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
